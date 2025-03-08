@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>buldel-slide</title>
     <link rel="stylesheet" href="./slick.css">
     <link rel="stylesheet" href="./product-style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -18,101 +18,78 @@
 <body>
     <div class="silder-buldel">
         <div class="item-grid">
-<div class="home-auto">
-    <strong>Home Automation</strong>
-</div>
- 
-            
+            <div class="home-auto">
+                <strong>Home Automation</strong>
+            </div>
+
+
             <div id="manufacturer-list" class="item-list slick-slider"></div>
 
             <script>
-                const manufacturers = [
-                    {
-                        // name: "DELL",
-                        // link: "/nike",
-                        imageSrc: "./assest/img/buldel-home-aoto (1).jpg",
-                        imageAlt: "Picture for manufacturer DELL"
-                    },
-                    {
-                        // name: "ACER",
-                        link: "/acer",
-                        imageSrc: "./assest/img/buldel-home-aoto (2).jpg",
-                        imageAlt: "Picture for manufacturer ACER"
-                    },
-                    {
-                        // name: "LENOVO",
-                        // link: "/lenovo",
-                        imageSrc: "./assest/img/buldel-home-aoto (3).jpg",
-                        imageAlt: "Picture for manufacturer LENOVO"
-                    },
-                    {
-                        // name: "Asus",
-                        // link: "/asus",
-                        imageSrc: "./assest/img/buldel-home-aoto (4).jpg",
-                        imageAlt: "Picture for manufacturer Asus"
-                    },
-                    {
-                        // name: "DELL",
-                        // link: "/nike",
-                        imageSrc: "./assest/img/buldel-home-aoto (1).jpg",
-                        imageAlt: "Picture for manufacturer DELL"
-                    },
-                    {
-                        // name: "ACER",
-                        link: "/acer",
-                        imageSrc: "./assest/img/buldel-home-aoto (2).jpg",
-                        imageAlt: "Picture for manufacturer ACER"
-                    },
-                    {
-                        // name: "LENOVO",
-                        // link: "/lenovo",
-                        imageSrc: "./assest/img/buldel-home-aoto (3).jpg",
-                        imageAlt: "Picture for manufacturer LENOVO"
-                    },
-                    {
-                        // name: "Asus",
-                        // link: "/asus",
-                        imageSrc: "./assest/img/buldel-home-aoto (4).jpg",
-                        imageAlt: "Picture for manufacturer Asus"
-                    },
-                   
-                ];
+         const manufacturers = [
+    {
+        imageSrc: "./assest/img/buldel-home-aoto (1).jpg",
+        imageAlt: "Picture for manufacturer DELL"
+    },
+    {
+        imageSrc: "./assest/img/buldel-home-aoto (2).jpg",
+        imageAlt: "Picture for manufacturer ACER"
+    },
+    {
+        imageSrc: "./assest/img/buldel-home-aoto (3).jpg",
+        imageAlt: "Picture for manufacturer LENOVO"
+    },
+    {
+        imageSrc: "./assest/img/buldel-home-aoto (4).jpg",
+        imageAlt: "Picture for manufacturer Asus"
+    },
+    {
+        imageSrc: "./assest/img/buldel-home-aoto (1).jpg",
+        imageAlt: "Picture for manufacturer DELL"
+    },
+    {
+        imageSrc: "./assest/img/buldel-home-aoto (2).jpg",
+        imageAlt: "Picture for manufacturer ACER"
+    },
+    {
+        imageSrc: "./assest/img/buldel-home-aoto (3).jpg",
+        imageAlt: "Picture for manufacturer LENOVO"
+    },
+    {
+        imageSrc: "./assest/img/buldel-home-aoto (4).jpg",
+        imageAlt: "Picture for manufacturer Asus"
+    },
+];
 
-                const container = document.getElementById("manufacturer-list");
+const container = document.getElementById("manufacturer-list");
 
-                manufacturers.forEach(manufacturer => {
-                    const itemBox = document.createElement("div");
-                    itemBox.classList.add("item-box");
+manufacturers.forEach(manufacturer => {
+    const itemBox = document.createElement("div");
+    itemBox.classList.add("item-box");
 
-                    const manufacturerItem = document.createElement("div");
-                    manufacturerItem.classList.add("manufacturer-item");
+    const manufacturerItem = document.createElement("div");
+    manufacturerItem.classList.add("manufacturer-item");
 
-                    const title = document.createElement("h2");
-                    title.classList.add("title");
-                    const link = document.createElement("a");
-                    link.href = manufacturer.link;
-                    link.title = `Show products manufactured by ${manufacturer.name}`;
-                    link.textContent = manufacturer.name;
-                    title.appendChild(link);
+    const title = document.createElement("h2");
+    title.classList.add("title");
+    title.textContent = manufacturer.imageAlt.replace("Picture for manufacturer ", ""); // Extract name from alt text
 
-                    const picture = document.createElement("div");
-                    picture.classList.add("picture");
-                    const pictureLink = document.createElement("a");
-                    pictureLink.href = manufacturer.link;
-                    pictureLink.title = `Show products manufactured by ${manufacturer.name}`;
-                    const image = document.createElement("img");
-                    image.alt = manufacturer.imageAlt;
-                    image.src = manufacturer.imageSrc;
-                    image.title = `Show products manufactured by ${manufacturer.name}`;
-                    pictureLink.appendChild(image);
-                    picture.appendChild(pictureLink);
+    const picture = document.createElement("div");
+    picture.classList.add("picture");
+    const image = document.createElement("img");
+    image.alt = manufacturer.imageAlt;
+    image.src = manufacturer.imageSrc;
+    image.title = manufacturer.imageAlt;
 
-                    manufacturerItem.appendChild(title);
-                    manufacturerItem.appendChild(picture);
-                    itemBox.appendChild(manufacturerItem);
+    picture.appendChild(image);
+    manufacturerItem.appendChild(title);
+    manufacturerItem.appendChild(picture);
+    itemBox.appendChild(manufacturerItem);
 
-                    container.appendChild(itemBox);
-                });
+    container.appendChild(itemBox);
+});
+
+              
             </script>
 
         </div>
