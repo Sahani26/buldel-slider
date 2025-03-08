@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buldel-Slider</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./slick.css">
     <link rel="stylesheet" href="./product-style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/4anl615-qyjlkqa_yad2lw.scripts.js?v=dcv7n2TdkiOUBov41aJ1Ph3kImQ"></script>
 
 
@@ -18,7 +20,7 @@
         <div class="item-grid">
 
 
-                <div class="item-list slick-slider">
+            <!-- <div class="item-list slick-slider">
                     <div class="item-box">
                         <div class="manufacturer-item">
                             <h2 class="title"><a href="/nike" title="Show products manufactured by DELL">DELL</a></h2>
@@ -79,12 +81,96 @@
                                 </a></div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+            <div id="manufacturer-list" class="item-list slick-slider"></div>
 
-            </div>
+            <script>
+                const manufacturers = [
+                    {
+                        name: "DELL",
+                        link: "/nike",
+                        imageSrc: "https://redseller.forefrontinfotech.com/images/thumbs/0000212_dell_420.png",
+                        imageAlt: "Picture for manufacturer DELL"
+                    },
+                    {
+                        name: "ACER",
+                        link: "/acer",
+                        imageSrc: "https://redseller.forefrontinfotech.com/images/thumbs/0000210_acer_420.png",
+                        imageAlt: "Picture for manufacturer ACER"
+                    },
+                    {
+                        name: "LENOVO",
+                        link: "/lenovo",
+                        imageSrc: "https://redseller.forefrontinfotech.com/images/thumbs/0000211_lenovo_420.png",
+                        imageAlt: "Picture for manufacturer LENOVO"
+                    },
+                    {
+                        name: "Asus",
+                        link: "/asus",
+                        imageSrc: "https://redseller.forefrontinfotech.com/images/thumbs/0000215_asus_420.png",
+                        imageAlt: "Picture for manufacturer Asus"
+                    },
+                    {
+                        name: "Apple",
+                        link: "/apple",
+                        imageSrc: "https://redseller.forefrontinfotech.com/images/thumbs/0000017_apple_420.jpg",
+                        imageAlt: "Picture for manufacturer Apple"
+                    },
+                    {
+                        name: "HP",
+                        link: "/hp",
+                        imageSrc: "https://redseller.forefrontinfotech.com/images/thumbs/0000018_hp_420.jpg",
+                        imageAlt: "Picture for manufacturer HP"
+                    },
+                    {
+                        name: "HP",
+                        link: "/hp",
+                        imageSrc: "https://redseller.forefrontinfotech.com/images/thumbs/0000018_hp_420.jpg",
+                        imageAlt: "Picture for manufacturer HP"
+                    }
+                ];
 
+                const container = document.getElementById("manufacturer-list");
+
+                manufacturers.forEach(manufacturer => {
+                    const itemBox = document.createElement("div");
+                    itemBox.classList.add("item-box");
+
+                    const manufacturerItem = document.createElement("div");
+                    manufacturerItem.classList.add("manufacturer-item");
+
+                    const title = document.createElement("h2");
+                    title.classList.add("title");
+                    const link = document.createElement("a");
+                    link.href = manufacturer.link;
+                    link.title = `Show products manufactured by ${manufacturer.name}`;
+                    link.textContent = manufacturer.name;
+                    title.appendChild(link);
+
+                    const picture = document.createElement("div");
+                    picture.classList.add("picture");
+                    const pictureLink = document.createElement("a");
+                    pictureLink.href = manufacturer.link;
+                    pictureLink.title = `Show products manufactured by ${manufacturer.name}`;
+                    const image = document.createElement("img");
+                    image.alt = manufacturer.imageAlt;
+                    image.src = manufacturer.imageSrc;
+                    image.title = `Show products manufactured by ${manufacturer.name}`;
+                    pictureLink.appendChild(image);
+                    picture.appendChild(pictureLink);
+
+                    manufacturerItem.appendChild(title);
+                    manufacturerItem.appendChild(picture);
+                    itemBox.appendChild(manufacturerItem);
+
+                    container.appendChild(itemBox);
+                });
+            </script>
 
         </div>
+
+
+    </div>
 
     </div>
 
