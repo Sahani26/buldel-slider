@@ -1,0 +1,36 @@
+/* .picture {
+    width: 100%;
+    height: 400px;
+    background: #757373;
+} */
+  .silder-buldel h2.title {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.picture {
+    /* width: 97%; */
+    /* height: 300px; */
+    background: #757373;
+    /* margin: auto; */
+    background: #ffcb36;
+    border: 1px solid #003769;
+}
+.slick-slide{
+    position: relative !important;
+}
+.item-grid {
+
+
+    border-radius: 5px;
+}
+.item-box{
+    margin: 0 5px;
+}
