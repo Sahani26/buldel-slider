@@ -26,39 +26,15 @@
             <div id="manufacturer-list" class="item-list slick-slider"></div>
 
             <script>
-         const manufacturers = [
-    {
-        imageSrc: "./assest/img/buldel-home-aoto (1).jpg",
-        imageAlt: "Picture for manufacturer DELL"
-    },
-    {
-        imageSrc: "./assest/img/buldel-home-aoto (2).jpg",
-        imageAlt: "Picture for manufacturer ACER"
-    },
-    {
-        imageSrc: "./assest/img/buldel-home-aoto (3).jpg",
-        imageAlt: "Picture for manufacturer LENOVO"
-    },
-    {
-        imageSrc: "./assest/img/buldel-home-aoto (4).jpg",
-        imageAlt: "Picture for manufacturer Asus"
-    },
-    {
-        imageSrc: "./assest/img/buldel-home-aoto (1).jpg",
-        imageAlt: "Picture for manufacturer DELL"
-    },
-    {
-        imageSrc: "./assest/img/buldel-home-aoto (2).jpg",
-        imageAlt: "Picture for manufacturer ACER"
-    },
-    {
-        imageSrc: "./assest/img/buldel-home-aoto (3).jpg",
-        imageAlt: "Picture for manufacturer LENOVO"
-    },
-    {
-        imageSrc: "./assest/img/buldel-home-aoto (4).jpg",
-        imageAlt: "Picture for manufacturer Asus"
-    },
+ const manufacturers = [
+    { imageSrc: "./assest/img/buldel-home-aoto (1).jpg" },
+    { imageSrc: "./assest/img/buldel-home-aoto (2).jpg" },
+    { imageSrc: "./assest/img/buldel-home-aoto (3).jpg" },
+    { imageSrc: "./assest/img/buldel-home-aoto (4).jpg" },
+    { imageSrc: "./assest/img/buldel-home-aoto (1).jpg" },
+    { imageSrc: "./assest/img/buldel-home-aoto (2).jpg" },
+    { imageSrc: "./assest/img/buldel-home-aoto (3).jpg" },
+    { imageSrc: "./assest/img/buldel-home-aoto (4).jpg" },
 ];
 
 const container = document.getElementById("manufacturer-list");
@@ -70,26 +46,24 @@ manufacturers.forEach(manufacturer => {
     const manufacturerItem = document.createElement("div");
     manufacturerItem.classList.add("manufacturer-item");
 
-    const title = document.createElement("h2");
-    title.classList.add("title");
-    title.textContent = manufacturer.imageAlt.replace("Picture for manufacturer ", ""); // Extract name from alt text
+    // Extract filename from imageSrc and remove extension
+    const imageName = manufacturer.imageSrc.split('/').pop().split('.')[0];
 
     const picture = document.createElement("div");
     picture.classList.add("picture");
+
     const image = document.createElement("img");
-    image.alt = manufacturer.imageAlt;
+    image.alt = `Image of ${imageName}`;
     image.src = manufacturer.imageSrc;
-    image.title = manufacturer.imageAlt;
+    image.title = `Image of ${imageName}`;
 
     picture.appendChild(image);
-    manufacturerItem.appendChild(title);
     manufacturerItem.appendChild(picture);
     itemBox.appendChild(manufacturerItem);
 
     container.appendChild(itemBox);
 });
-
-              
+       
             </script>
 
         </div>
